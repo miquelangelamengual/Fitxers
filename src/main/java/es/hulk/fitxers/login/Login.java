@@ -14,6 +14,10 @@ public class Login {
         this.password = password;
     }
 
+    public Login() {
+
+    }
+
     /*
      * Getters
      */
@@ -41,15 +45,11 @@ public class Login {
     public void validate() {
         checkEmpty();
         Register reg = new Register();
-        if (getUsername().equals(reg.getAdmins().get(username)) && getPassword().equals(reg.getAdmins().get(password))) {
+        if (getUsername().equals(reg.getAdmins().get("admin"))) {
             TypeAccess.administrator();
-            Utils.newLine("Admin");
         }
-        if (getUsername().equals(reg.getNormal().get(username)) && getUsername().equals(reg.getNormal().get(password))) {
+        if (getUsername().equals(reg.getAdmins().get("normal"))) {
             TypeAccess.normalAccess();
-            Utils.newLine("Normal");
-        } else {
-            Utils.newLine("No Funciona");
         }
     }
 
