@@ -40,10 +40,16 @@ public class Login {
 
     public void validate() {
         checkEmpty();
-        if (getUsername().equals("admin") && getPassword().equals("password")) {
+        Register reg = new Register();
+        if (getUsername().equals(reg.getAdmins().get(username)) && getPassword().equals(reg.getAdmins().get(password))) {
             TypeAccess.administrator();
-        } else {
+            Utils.newLine("Admin");
+        }
+        if (getUsername().equals(reg.getNormal().get(username)) && getUsername().equals(reg.getNormal().get(password))) {
             TypeAccess.normalAccess();
+            Utils.newLine("Normal");
+        } else {
+            Utils.newLine("No Funciona");
         }
     }
 
