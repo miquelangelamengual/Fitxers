@@ -1,7 +1,6 @@
 package es.hulk.fitxers.menu;
 
 import es.hulk.fitxers.login.Login;
-import es.hulk.fitxers.login.Register;
 import es.hulk.fitxers.utils.Utils;
 
 import java.util.Scanner;
@@ -16,6 +15,8 @@ public class Menu {
         Utils.newLine("1 - Login");
         Utils.newLine("2 - Register");
         Utils.newLine("");
+        Utils.newLine("3 - Surt del programa");
+        Utils.newLine("");
         int option = scanner.nextInt();
         switch (option) {
             case 1:
@@ -23,6 +24,9 @@ public class Menu {
                 break;
             case 2:
                 registerMenu(type);
+                break;
+            case 3:
+                System.exit(404);
                 break;
         }
     }
@@ -57,7 +61,6 @@ public class Menu {
 
         Utils.line("Contrasenya");
         String password = scanner.nextLine();
-        Register reg = new Register();
     }
 
 }
