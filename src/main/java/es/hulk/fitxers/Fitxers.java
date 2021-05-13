@@ -5,7 +5,7 @@ import es.hulk.fitxers.menu.Menu;
 public class Fitxers {
 
     public static void main(String[] args) {
-        Menu.firstMenu();
+        Menu.firstMenu(null);
     }
 
 }

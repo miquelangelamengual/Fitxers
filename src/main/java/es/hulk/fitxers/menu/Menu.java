@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void firstMenu() {
+    public static void firstMenu(String type) {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Login");
@@ -19,15 +19,15 @@ public class Menu {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                loginMenu();
+                loginMenu(type);
                 break;
             case 2:
-                registerMenu();
+                registerMenu(type);
                 break;
         }
     }
 
-    public static void loginMenu() {
+    public static void loginMenu(String type) {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Login");
@@ -43,14 +43,14 @@ public class Menu {
         login.validate();
     }
 
-    public static void registerMenu() {
+    public static void registerMenu(String type) {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Register");
         Utils.newLine("");
 
         Utils.line("Tipo de usuari (admin o normal): ");
-        String type = scanner.nextLine();
+        type = scanner.nextLine();
 
         Utils.line("Nom de Usuari: ");
         String username = scanner.nextLine();
@@ -58,9 +58,6 @@ public class Menu {
         Utils.line("Contrasenya");
         String password = scanner.nextLine();
         Register reg = new Register();
-        reg.setPassword(password);
-        reg.setUsername(username);
-        reg.registerUser(type);
     }
 
 }

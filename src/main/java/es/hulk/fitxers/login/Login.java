@@ -8,6 +8,15 @@ public class Login {
 
     private String username;
     private String password;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Login(String username, String password) {
         this.username = username;
@@ -44,11 +53,9 @@ public class Login {
 
     public void validate() {
         checkEmpty();
-        Register reg = new Register();
-        if (getUsername().equals(reg.getAdmins().get("admin"))) {
+        if (username.equals("admin") && password.equals("password")) {
             TypeAccess.administrator();
-        }
-        if (getUsername().equals(reg.getAdmins().get("normal"))) {
+        } else {
             TypeAccess.normalAccess();
         }
     }
@@ -56,17 +63,17 @@ public class Login {
     public void checkEmpty() {
         if (getPassword().isEmpty() && getUsername().isEmpty()) {
             Utils.line("El Nom de Usuari i Contrassenya introduits estan buits, torna-ho a intentar");
-            Menu.firstMenu();
+            Menu.firstMenu(null);
         }
 
         if (getUsername().isEmpty()) {
             Utils.line("Nom de Usuari incorrecte, torna-ho a intentar");
-            Menu.firstMenu();
+            Menu.firstMenu(null);
         }
 
         if (getPassword().isEmpty()) {
             Utils.line("Contrassenya buida, torna-ho a intentar");
-            Menu.firstMenu();
+            Menu.firstMenu(null);
         }
     }
 }
