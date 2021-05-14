@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void firstMenu(String type) {
+    public static void firstMenu() {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Login");
@@ -20,10 +20,10 @@ public class Menu {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                loginMenu(type);
+                loginMenu();
                 break;
             case 2:
-                registerMenu(type);
+                registerMenu();
                 break;
             case 3:
                 System.exit(404);
@@ -31,7 +31,7 @@ public class Menu {
         }
     }
 
-    public static void loginMenu(String type) {
+    public static void loginMenu() {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Login");
@@ -47,14 +47,13 @@ public class Menu {
         login.validate();
     }
 
-    public static void registerMenu(String type) {
+    public static void registerMenu() {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Register");
         Utils.newLine("");
 
         Utils.line("Tipo de usuari (admin o normal): ");
-        type = scanner.nextLine();
 
         Utils.line("Nom de Usuari: ");
         String username = scanner.nextLine();
