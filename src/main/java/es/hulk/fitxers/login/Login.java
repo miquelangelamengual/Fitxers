@@ -6,16 +6,12 @@ import es.hulk.fitxers.utils.Utils;
 
 public class Login {
 
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
 
     public Login(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-
-    public Login() {
-
     }
 
     /*
