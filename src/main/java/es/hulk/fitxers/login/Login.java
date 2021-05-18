@@ -45,7 +45,7 @@ public class Login {
     public void validate() {
         checkEmpty();
         if (username.equals("admin") && password.equals("password")) {
-            TypeAccess.administrator();
+            TypeAccess.adminAccess();
         } else {
             TypeAccess.normalAccess();
         }
@@ -54,17 +54,17 @@ public class Login {
     public void checkEmpty() {
         if (getPassword().isEmpty() && getUsername().isEmpty()) {
             Utils.line("El Nom de Usuari i Contrassenya introduits estan buits, torna-ho a intentar");
-            Menu.firstMenu(null);
+            Menu.firstMenu();
         }
 
         if (getUsername().isEmpty()) {
             Utils.line("Nom de Usuari incorrecte, torna-ho a intentar");
-            Menu.firstMenu(null);
+            Menu.firstMenu();
         }
 
         if (getPassword().isEmpty()) {
             Utils.line("Contrassenya buida, torna-ho a intentar");
-            Menu.firstMenu(null);
+            Menu.firstMenu();
         }
     }
 }

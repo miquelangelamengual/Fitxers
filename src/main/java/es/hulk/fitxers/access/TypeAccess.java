@@ -4,7 +4,7 @@ import es.hulk.fitxers.utils.Utils;
 
 public class TypeAccess {
 
-    public static void administrator() {
+    public static void adminAccess() {
         Utils.newLine("Admin");
     }
 
