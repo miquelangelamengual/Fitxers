@@ -30,17 +30,6 @@ public class Login {
         return password;
     }
 
-    /*
-     * Setters
-     */
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public void validate() {
         checkEmpty();
@@ -59,11 +48,6 @@ public class Login {
 
         if (getUsername().isEmpty()) {
             Utils.line("Nom de Usuari incorrecte, torna-ho a intentar");
-            Menu.firstMenu();
-        }
-
-        if (getPassword().isEmpty()) {
-            Utils.line("Contrassenya buida, torna-ho a intentar");
             Menu.firstMenu();
         }
     }
