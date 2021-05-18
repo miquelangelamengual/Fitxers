@@ -10,4 +10,12 @@ public class Utils {
         System.out.println(path);
     }
 
+    public static void space() {
+        System.out.println("");
+    }
+
+    public static void bar() {
+        System.out.println("--------------------");
+    }
+
 }
