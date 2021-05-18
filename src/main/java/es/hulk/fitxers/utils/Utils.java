@@ -15,7 +15,11 @@ public class Utils {
     }
 
     public static void bar() {
-        System.out.println("--------------------");
+        System.out.println(Color.strikethrough);
+    }
+
+    public static void exit() {
+        System.exit(0);
     }
 
 }
