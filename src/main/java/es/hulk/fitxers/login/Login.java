@@ -6,8 +6,8 @@ import es.hulk.fitxers.utils.Utils;
 
 public class Login {
 
-    private final String username;
-    private final String password;
+    private String username;
+    private String password;
 
     public Login(String username, String password) {
         this.username = username;
@@ -26,6 +26,17 @@ public class Login {
         return password;
     }
 
+    /*
+     * Setters
+     */
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void validate() {
         checkEmpty();
