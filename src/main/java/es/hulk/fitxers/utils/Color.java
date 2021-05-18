@@ -1,16 +1,10 @@
 package es.hulk.fitxers.utils;
 
-import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.util.Map;
-
 public class Color {
 
-    // reset
     public static final String reset = "\u001B[0m";
-    public static final String strikethrough = "\u03C0";
+    public static final String strikethrough = " ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶";
 
-    // colores de letra
     public static final String black = "\u001B[30m";
     public static final String red = "\u001B[31m";
     public static final String green = "\u001B[32m";
