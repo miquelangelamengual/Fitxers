@@ -7,7 +7,7 @@ public class Utils {
     }
 
     public static void line(String path) {
-        System.out.println(path);
+        System.out.print(path);
     }
 
     public static void space() {
