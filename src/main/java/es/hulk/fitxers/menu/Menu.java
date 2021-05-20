@@ -4,11 +4,12 @@ import es.hulk.fitxers.login.Login;
 import es.hulk.fitxers.utils.Color;
 import es.hulk.fitxers.utils.Utils;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
 
-    public static void firstMenu() {
+    public static void firstMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
         Utils.newLine("Practica 3 - Login");

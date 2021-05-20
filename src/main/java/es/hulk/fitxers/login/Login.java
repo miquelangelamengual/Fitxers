@@ -4,6 +4,8 @@ import es.hulk.fitxers.access.TypeAccess;
 import es.hulk.fitxers.menu.Menu;
 import es.hulk.fitxers.utils.Utils;
 
+import java.io.IOException;
+
 public class Login {
 
     private String username;
@@ -38,7 +40,7 @@ public class Login {
         this.password = password;
     }
 
-    public void validate() {
+    public void validate() throws IOException {
         checkEmpty();
         if (username.equals("admin") && password.equals("password")) {
             TypeAccess.adminAccess();
@@ -47,7 +49,7 @@ public class Login {
         }
     }
 
-    public void checkEmpty() {
+    public void checkEmpty() throws IOException {
         if (getPassword().isEmpty() && getUsername().isEmpty()) {
             Utils.line("El Nom de Usuari i Contrassenya introduits estan buits, torna-ho a intentar");
             Menu.firstMenu();
