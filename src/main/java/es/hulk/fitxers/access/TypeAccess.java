@@ -25,13 +25,11 @@ public class TypeAccess {
         option = scanner.nextInt();
         switch (option) {
             case 1:
-                Administrator.add();
                 break;
             case 2:
-                Administrator.remove();
                 break;
             case 3:
-                Administrator.edit();
+                Menu.editMenu();
                 break;
             case 4:
                 Username.read();
