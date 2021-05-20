@@ -8,6 +8,9 @@ public class Article {
     private double price;
     private int stock;
 
+    private static int MAX_STRING_NAME = 20;
+    private static int MAX_STRING_DESC = 120;
+
     public Article() {}
 
     public String getName() {
@@ -48,5 +51,29 @@ public class Article {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getAdjustedName() {
+        String adjustedName = getName();
+        if (adjustedName.length() > MAX_STRING_NAME) {
+            adjustedName = adjustedName.substring(0, MAX_STRING_NAME);
+            return adjustedName;
+        }
+        for (int i = getName().length();i < MAX_STRING_NAME; i++) {
+            adjustedName += " ";
+        }
+        return adjustedName;
+    }
+
+    public String getAdjustedDescription() {
+        String adjustedDescription = getDescription();
+        if (adjustedDescription.length() > MAX_STRING_DESC) {
+            adjustedDescription = adjustedDescription.substring(0, MAX_STRING_DESC);
+            return adjustedDescription;
+        }
+        for (int i = getName().length();i < MAX_STRING_DESC; i++) {
+            adjustedDescription += " ";
+        }
+        return adjustedDescription;
     }
 }
