@@ -94,4 +94,16 @@ public class Article {
         }
         return adjustedDescription.toString();
     }
+
+    /*
+     * GETTERS & SETTERS FOR MAX STRING FOR NAME AND DESCRIPTION
+     */
+
+    public static int getMaxStringName() {
+        return MAX_STRING_NAME;
+    }
+
+    public static int getMaxStringDesc() {
+        return MAX_STRING_DESC;
+    }
 }
