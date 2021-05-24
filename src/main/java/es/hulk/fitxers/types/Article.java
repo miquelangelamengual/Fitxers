@@ -8,6 +8,8 @@ public class Article {
     private int stock;
     private boolean isActive;
 
+    private Category category;
+
     private static final int MAX_STRING_NAME = 20;
     private static final int MAX_STRING_DESC = 120;
 
@@ -37,6 +39,10 @@ public class Article {
         isActive = active;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     /*
      * GETTERS
      */
@@ -59,6 +65,10 @@ public class Article {
 
     public boolean isActive() {
         return isActive;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public String getAdjustedName() {
