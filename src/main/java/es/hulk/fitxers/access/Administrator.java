@@ -1,38 +1,43 @@
 package es.hulk.fitxers.access;
 
-import es.hulk.fitxers.types.Article;
-import es.hulk.fitxers.types.Stock;
+import es.hulk.fitxers.menu.Menu;
+import es.hulk.fitxers.utils.Utils;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.HashMap;
+import java.util.Scanner;
 
 public class Administrator {
 
-    private static int MAXIMUM_SIZE;
+    private static int option;
 
-    private RandomAccessFile file;
-
-    public Administrator(String fileName, String mode) throws FileNotFoundException {
-        file = new RandomAccessFile(fileName, mode);
-    }
-
-
-    public void add() throws IOException {
-        Article article = new Article();
-        file.seek(file.length());
-        file.writeChars(article.getName());
-        file.writeChars(article.getDescription());
-        file.writeDouble(article.getPrice());
-    }
-
-    public void remove() throws IOException {
-
-    }
-
-    public void edit() throws IOException {
-
+    public static void adminMenu() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        Utils.bar();
+        Utils.newLine(" Mode Administrador");
+        Utils.space();
+        Utils.newLine("1 - Inserir");
+        Utils.newLine("2 - Eliminar");
+        Utils.newLine("3 - Editar");
+        Utils.newLine("4 - Llegir");
+        Utils.space();
+        Utils.newLine("5 - Torna al menu principal");
+        Utils.bar();
+        Utils.line("Elegeix una opcio: ");
+        option = scanner.nextInt();
+        switch (option) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                Menu.editMenu();
+                break;
+            case 4:
+                break;
+            case 5:
+                Menu.firstMenu();
+                break;
+        }
     }
 
 }
