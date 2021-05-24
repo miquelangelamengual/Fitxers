@@ -10,6 +10,27 @@ public class Stock {
         this.quantity = quantity;
     }
 
+    /*
+     * SETTERS
+     */
 
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    /*
+     * GETTERS
+     */
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
