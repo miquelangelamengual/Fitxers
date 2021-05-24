@@ -8,8 +8,7 @@ public class StudentIO {
     private static final int STUDENT_SIZE = 1 + 4 + (Student.getMaxString() * 2); // 45
     // active + id + name
 
-    private RandomAccessFile f;
-    private long studentCount;
+    private final RandomAccessFile f;
 
     public StudentIO(String fileName, String mode) throws IOException {
         f = new RandomAccessFile(fileName, mode);
@@ -18,7 +17,6 @@ public class StudentIO {
     /**
      * Adds a student at the end of the file.
      * @param student Student to be added.
-     * @throws IOException
      */
     public void add(Student student) throws IOException {
         f.seek(f.length());
@@ -35,7 +33,7 @@ public class StudentIO {
      */
     public Student getStudent(int id) throws IOException {
         int index = getStudentIndex(id);
-        f.seek(index * STUDENT_SIZE);
+        f.seek((long) index * STUDENT_SIZE);
         return readStudent();
     }
 
