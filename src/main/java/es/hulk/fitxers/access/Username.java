@@ -3,6 +3,7 @@ package es.hulk.fitxers.access;
 import es.hulk.fitxers.menu.Menu;
 import es.hulk.fitxers.types.Article;
 import es.hulk.fitxers.types.Category;
+import es.hulk.fitxers.types.StorageIO;
 import es.hulk.fitxers.utils.Utils;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ public class Username {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
+                readArticles();
                 break;
             case 2:
                 Menu.firstMenu();
@@ -29,15 +31,17 @@ public class Username {
         }
     }
 
-    public static void readArticles(Article article, Category category) throws IOException {
-        switch (article.getCategory()) {
-            case CATEGORIA1:
-
-                break;
-            case CATEGORIA2:
-            case CATEGORIA3:
-            case CATEGORIA4:
-        }
+    public static void readArticles() throws IOException {
+        StorageIO storage = new StorageIO("article.txt", "r");
+        storage.read();
+//        switch (article.getCategory()) {
+//            case CATEGORIA1:
+//
+//                break;
+//            case CATEGORIA2:
+//            case CATEGORIA3:
+//            case CATEGORIA4:
+//        }
     }
 
 }

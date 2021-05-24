@@ -21,8 +21,16 @@ public class StorageIO {
         randomAccessFile.writeChars(String.valueOf(article.getCategory()));
     }
 
-    public void read(Article article) {
-
+    public void read() throws IOException{
+        Article article = new Article();
+        randomAccessFile.seek(randomAccessFile.length());
+        article.setActive(randomAccessFile.readBoolean());
+        article.setName(randomAccessFile.readLine());
+        article.setDescription(randomAccessFile.readLine());
+        article.setPrice(randomAccessFile.readDouble());
+        article.setStock(randomAccessFile.readInt());
+        article.setCategory(Category.valueOf(randomAccessFile.readLine()));
+        System.out.println(article);
     }
 
 }
