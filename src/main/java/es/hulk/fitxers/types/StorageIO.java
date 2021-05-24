@@ -18,6 +18,11 @@ public class StorageIO {
         randomAccessFile.writeChars(article.getAdjustedDescription());
         randomAccessFile.writeDouble(article.getPrice());
         randomAccessFile.writeInt(article.getStock());
+        randomAccessFile.writeChars(String.valueOf(article.getCategory()));
+    }
+
+    public void read(Article article) {
+
     }
 
 }
