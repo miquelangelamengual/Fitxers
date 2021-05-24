@@ -5,7 +5,8 @@ public class Article {
     private String name;
     private String description;
     private double price;
-    private Stock stock;
+    private int stock;
+    private boolean isActive;
 
     private static int MAX_STRING_NAME = 20;
     private static int MAX_STRING_DESC = 120;
@@ -28,8 +29,12 @@ public class Article {
         this.price = price;
     }
 
-    public void setStock(Stock stock) {
+    public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     /*
@@ -48,8 +53,12 @@ public class Article {
         return price;
     }
 
-    public Stock getStock() {
+    public int getStock() {
         return stock;
+    }
+
+    public boolean isActive() {
+        return isActive;
     }
 
     public String getAdjustedName() {
