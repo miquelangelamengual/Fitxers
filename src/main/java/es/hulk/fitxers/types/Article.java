@@ -8,8 +8,8 @@ public class Article {
     private int stock;
     private boolean isActive;
 
-    private static int MAX_STRING_NAME = 20;
-    private static int MAX_STRING_DESC = 120;
+    private static final int MAX_STRING_NAME = 20;
+    private static final int MAX_STRING_DESC = 120;
 
     public Article() {}
 

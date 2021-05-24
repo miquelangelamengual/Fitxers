@@ -1,15 +1,12 @@
 package es.hulk.fitxers.menu;
 
 import es.hulk.fitxers.login.Login;
-import es.hulk.fitxers.utils.Color;
 import es.hulk.fitxers.utils.Utils;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-
-    private static int option;
 
     public static void firstMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +37,7 @@ public class Menu {
         Utils.space();
         Utils.newLine("6 - Tornar enrere");
         Utils.bar();
-        option = scanner.nextInt();
+        int option = scanner.nextInt();
         switch (option) {
             case 1:
                 break;

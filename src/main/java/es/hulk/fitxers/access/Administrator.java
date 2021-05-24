@@ -1,6 +1,8 @@
 package es.hulk.fitxers.access;
 
 import es.hulk.fitxers.menu.Menu;
+import es.hulk.fitxers.types.Article;
+import es.hulk.fitxers.types.StorageIO;
 import es.hulk.fitxers.utils.Utils;
 
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class Administrator {
         option = scanner.nextInt();
         switch (option) {
             case 1:
+                addMenu();
                 break;
             case 2:
                 break;
@@ -38,6 +41,30 @@ public class Administrator {
                 Menu.firstMenu();
                 break;
         }
+    }
+
+    public static void addMenu() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        StorageIO storage = new StorageIO("article.txt", "rw");
+        Article article = new Article();
+
+        Utils.line("Posa un nom a l'article");
+        article.setName(scanner.nextLine());
+
+        Utils.line("Posa una descripcio a l'article");
+        article.setDescription(scanner.nextLine());
+
+        Utils.line("Posa un stock a l'article");
+        article.setStock(scanner.nextInt());
+
+        Utils.line("Vols que estigui disponible?¿ (true / false): ");
+        article.setActive(scanner.nextBoolean());
+
+        Utils.line("Posa un preu a l'article");
+        article.setPrice(scanner.nextInt());
+
+        storage.add(article);
+        Utils.newLine("Article afegit");
     }
 
 }
