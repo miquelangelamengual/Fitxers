@@ -9,5 +9,4 @@ public class Fitxers {
     public static void main(String[] args) throws IOException {
         Menu.firstMenu();
     }
-
 }
