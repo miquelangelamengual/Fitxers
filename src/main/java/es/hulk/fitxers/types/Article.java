@@ -2,6 +2,7 @@ package es.hulk.fitxers.types;
 
 public class Article {
 
+    private int id;
     private String name;
     private String description;
     private double price;
@@ -18,6 +19,10 @@ public class Article {
     /*
      * SETTERS
      */
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -69,6 +74,10 @@ public class Article {
 
     public Category getCategory() {
         return category;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getAdjustedName() {
