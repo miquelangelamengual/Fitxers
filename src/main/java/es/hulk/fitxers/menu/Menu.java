@@ -24,35 +24,4 @@ public class Menu {
         login.validate();
     }
 
-    public static void editMenu() throws IOException{
-        Scanner scanner = new Scanner(System.in);
-        Utils.bar();
-        Utils.newLine(" Mode Administrador - Editar");
-        Utils.space();
-        Utils.newLine("1 - Editar disponibilitat");
-        Utils.newLine("2 - Editar Nom");
-        Utils.newLine("3 - Editar Descripcio");
-        Utils.newLine("4 - Editar Stock");
-        Utils.newLine("5 - Editar Preu");
-        Utils.space();
-        Utils.newLine("6 - Tornar enrere");
-        Utils.bar();
-        int option = scanner.nextInt();
-        switch (option) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                firstMenu();
-                break;
-        }
-    }
-
 }
