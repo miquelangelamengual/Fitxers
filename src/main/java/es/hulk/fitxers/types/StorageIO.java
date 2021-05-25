@@ -11,9 +11,9 @@ public class StorageIO {
     // active + id + name
 
     /**
-      * BOOLEAN + NAME + DESCRIPCIO + STOCK + PREU + CATEGORIA
-      *   1        20     240          4       4       10
-    **/
+     * BOOLEAN + NAME + DESCRIPCIO + STOCK + PREU + CATEGORIA
+     * 1        20     240          4       4       10
+     **/
 
     private final RandomAccessFile randomAccessFile;
 
@@ -53,15 +53,26 @@ public class StorageIO {
     }
 
     public void deleteArticle(Article article) throws IOException {
-
+        article = null;
+        //Setting file pointer to start of file
+        randomAccessFile.seek(0);
+        String data = randomAccessFile.readLine();
+        while (data != null) {
+            if (article != null && article.equals(article)) {
+                String blankData = "";
+                randomAccessFile.writeBytes(blankData);
+                break;
+            }
+            data = randomAccessFile.readLine();
+        }
     }
 
     public void viewAllArticle() throws IOException {
-        String data ;
+        String data;
         //This is responsible for reading complete file
         randomAccessFile.seek(0);
         data = randomAccessFile.readLine();
-        while (data != null){
+        while (data != null) {
             System.out.println(data);
             data = randomAccessFile.readLine();
         }
