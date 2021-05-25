@@ -1,5 +1,7 @@
 package es.hulk.fitxers.types;
 
+import es.hulk.fitxers.ex.Student;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
@@ -21,6 +23,7 @@ public class StorageIO {
 
     public void add(Article article) throws IOException {
         randomAccessFile.seek(randomAccessFile.length());
+        randomAccessFile.writeInt(article.getId());
         randomAccessFile.writeBoolean(article.isActive());
         randomAccessFile.writeChars(article.getAdjustedName());
         randomAccessFile.writeChars(article.getAdjustedDescription());
@@ -29,8 +32,8 @@ public class StorageIO {
         randomAccessFile.writeChars(String.valueOf(article.getCategory()));
     }
 
-    public Article getArticle(Category category) throws IOException {
-        int index = getIndex(category);
+    public Article getArticle(int id) throws IOException {
+        int index = getIndex(id);
         randomAccessFile.seek((long) index * MAX_SIZE);
         return readArticle();
     }
@@ -49,15 +52,31 @@ public class StorageIO {
         return article;
     }
 
-    private int getIndex(Category category) throws IOException {
+    public void deleteArticle(Article article) throws IOException {
+
+    }
+
+    public void viewAllArticle() throws IOException {
+        String data ;
+        //This is responsible for reading complete file
+        randomAccessFile.seek(0);
+        data = randomAccessFile.readLine();
+        while (data != null){
+            System.out.println(data);
+            data = randomAccessFile.readLine();
+        }
+    }
+
+    private int getIndex(int id) throws IOException {
         for (int i = 0; i < getCount(); i++) {
             randomAccessFile.seek((long) i * MAX_SIZE + 1);
-            if (category.equals(randomAccessFile.readInt())) {
+            if (id == randomAccessFile.readInt()) {
                 return i;
             }
         }
         return -1;
     }
+
 
     private int getCount() throws IOException {
         return (int) randomAccessFile.length() / MAX_SIZE;
