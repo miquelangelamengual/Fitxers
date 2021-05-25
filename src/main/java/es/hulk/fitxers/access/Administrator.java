@@ -48,6 +48,8 @@ public class Administrator {
         StorageIO storage = new StorageIO("article.txt", "rw");
         Article article = new Article();
 
+        addId();
+
         Utils.line("Posa un nom a l'article");
         article.setName(scanner.nextLine());
 
@@ -88,5 +90,13 @@ public class Administrator {
 
         storage.deleteArticle(article);
         adminMenu();
+    }
+
+    public static void addId() throws IOException {
+        Article article = new Article();
+        int counter = 1;
+        article.setId(0);
+
+
     }
 }
