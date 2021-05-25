@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class Administrator {
 
-    private static int option;
-
     public static void adminMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         Utils.bar();
@@ -25,17 +23,19 @@ public class Administrator {
         Utils.newLine("5 - Torna al menu principal");
         Utils.bar();
         Utils.line("Elegeix una opcio: ");
-        option = scanner.nextInt();
+        int option = scanner.nextInt();
         switch (option) {
             case 1:
                 addMenu();
                 break;
             case 2:
+                deleteArticleMenu();
                 break;
             case 3:
-                Menu.editMenu();
+                Editor.editMenu();
                 break;
             case 4:
+                Username.readArticles();
                 break;
             case 5:
                 Menu.firstMenu();
@@ -47,6 +47,9 @@ public class Administrator {
         Scanner scanner = new Scanner(System.in);
         StorageIO storage = new StorageIO("article.txt", "rw");
         Article article = new Article();
+
+        Utils.line("Id de l'article: ");
+        article.setId(scanner.nextInt());
 
         Utils.line("Posa un nom a l'article");
         article.setName(scanner.nextLine());
@@ -65,6 +68,20 @@ public class Administrator {
 
         storage.add(article);
         Utils.newLine("Article afegit");
+
+        adminMenu();
     }
 
+    public static void deleteArticleMenu() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        Article article = new Article();
+        StorageIO storage = new StorageIO("article.txt", "rw");
+
+        Utils.line("Id de l'article que vol borrar");
+        int get = scanner.nextInt();
+        get = article.getId();
+
+        storage.deleteArticle(article);
+        adminMenu();
+    }
 }
