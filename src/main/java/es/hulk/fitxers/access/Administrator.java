@@ -48,28 +48,33 @@ public class Administrator {
         StorageIO storage = new StorageIO("article.txt", "rw");
         Article article = new Article();
 
-        Utils.line("Id de l'article: ");
-        article.setId(scanner.nextInt());
-
         Utils.line("Posa un nom a l'article");
         article.setName(scanner.nextLine());
+
+        Utils.space();
 
         Utils.line("Posa una descripcio a l'article");
         article.setDescription(scanner.nextLine());
 
+        Utils.space();
+
         Utils.line("Posa un stock a l'article");
         article.setStock(scanner.nextInt());
+
+        Utils.space();
 
         Utils.line("Vols que estigui disponible?¿ (true / false): ");
         article.setActive(scanner.nextBoolean());
 
+        Utils.space();
+
         Utils.line("Posa un preu a l'article");
         article.setPrice(scanner.nextInt());
 
+        Utils.space();
+
         storage.add(article);
         Utils.newLine("Article afegit");
-
-        adminMenu();
     }
 
     public static void deleteArticleMenu() throws IOException {
