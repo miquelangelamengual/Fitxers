@@ -32,20 +32,7 @@ public class Username {
     }
 
     public static void readArticles() throws IOException {
-        Article article = new Article();
         StorageIO storage = new StorageIO("article.txt", "r");
-/*        if (article.getCategory() == Category.SUCESOS) {
-            storage.readArticle();
-        }
-        if (article.getCategory() == Category.INFORMATICA) {
-            storage.readArticle();
-        }
-        if (article.getCategory() == Category.DEPORTES) {
-            storage.readArticle();
-        }
-        if (article.getCategory() == Category.OCIO) {
-            storage.readArticle();
-        }*/
-        storage.readArticle();
+        storage.viewAllArticle();
     }
 }
