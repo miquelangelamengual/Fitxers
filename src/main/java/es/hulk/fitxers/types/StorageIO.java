@@ -37,7 +37,7 @@ public class StorageIO {
         return readArticle();
     }
 
-    public Article readArticle() throws IOException {
+    private Article readArticle() throws IOException {
         Article article = new Article();
         if (randomAccessFile.getFilePointer() % MAX_SIZE == 0) {
             article.setActive(randomAccessFile.readBoolean());
