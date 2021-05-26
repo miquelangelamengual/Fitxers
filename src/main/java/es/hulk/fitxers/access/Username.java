@@ -32,7 +32,7 @@ public class Username {
     }
 
     public static void readArticles() throws IOException {
-        StorageIO storage = new StorageIO("article.txt", "r");
+        StorageIO storage = new StorageIO("article.txt", "rws");
         storage.viewAllArticle();
     }
 }
