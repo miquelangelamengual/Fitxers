@@ -70,6 +70,7 @@ public class StorageIO {
         String data;
         randomAccessFile.seek(0);
         data = randomAccessFile.readLine();
+        System.out.println(data);
         while (data != null) {
             data = randomAccessFile.readLine();
             System.out.println(data);
