@@ -14,7 +14,6 @@ public class Menu {
         Utils.newLine("Practica 3 - Fitxers d'access aleatori");
         Utils.newLine("");
 
-
         Utils.line("Nom de usuari: ");
         String user = scanner.nextLine();
 
