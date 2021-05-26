@@ -8,11 +8,10 @@ import java.io.RandomAccessFile;
 public class StorageIO {
 
     private static final int MAX_SIZE = 1 + (Article.getMaxStringName() * 2) + (Article.getMaxStringDesc() * 2) + 4 + 4;
-    // active + id + name
 
     /**
      * BOOLEAN + NAME + DESCRIPCIO + STOCK + PREU + CATEGORIA
-     * 1        20     240          4       4       10
+     * 1        20         120        4       4       10
      **/
 
     private final RandomAccessFile randomAccessFile;
@@ -69,12 +68,11 @@ public class StorageIO {
 
     public void viewAllArticle() throws IOException {
         String data;
-        //This is responsible for reading complete file
         randomAccessFile.seek(0);
         data = randomAccessFile.readLine();
         while (data != null) {
-            System.out.println(data);
             data = randomAccessFile.readLine();
+            System.out.println(data);
         }
     }
 

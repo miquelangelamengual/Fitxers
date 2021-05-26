@@ -8,6 +8,10 @@ import java.io.IOException;
 public class Fitxers {
 
     public static void main(String[] args) throws IOException {
-        Administrator.addMenu();
+        init();
+    }
+
+    public static void init() throws IOException {
+        Menu.firstMenu();
     }
 }

@@ -11,8 +11,9 @@ public class Menu {
     public static void firstMenu() throws IOException {
         Scanner scanner = new Scanner(System.in);
         Utils.newLine("");
-        Utils.newLine("Practica 3 - Login");
+        Utils.newLine("Practica 3 - Fitxers d'access aleatori");
         Utils.newLine("");
+
 
         Utils.line("Nom de usuari: ");
         String user = scanner.nextLine();
